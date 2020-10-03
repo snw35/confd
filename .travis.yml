@@ -1,2 +1,6 @@
 import:
 - snw35/cicd:travis/travis.yml@main
+
+env:
+  global:
+    - IMAGE_TAG=CONFD_VERSION
