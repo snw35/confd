@@ -1,4 +1,4 @@
-FROM alpine:3.17.1
+FROM alpine:3.22.1
 
 ENV CONFD_VERSION 0.16.0
 ENV CONFD_URL https://github.com/kelseyhightower/confd/releases/download/v$CONFD_VERSION
