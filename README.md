@@ -1,6 +1,6 @@
 # confd
 
-* [Travis CI: ![Build Status](https://travis-ci.com/snw35/confd.svg?branch=master)](https://travis-ci.com/github/snw35/confd)
+* ![Build Status](https://github.com/snw35/confd/actions/workflows/update.yml/badge.svg)
 * [Dockerhub: snw35/confd](https://hub.docker.com/r/snw35/confd)
 
 Automatically updated confd container.
