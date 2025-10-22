@@ -18,7 +18,7 @@ on:
 
 jobs:
   call-upstream-workflow:
-    uses: snw35/cicd/.github/workflows/github.yaml@tag-fix
+    uses: snw35/cicd/.github/workflows/github.yaml@fix/run-on-tag
     with:
       IMAGE_TAG: 'CONFD_VERSION'
     secrets: inherit
