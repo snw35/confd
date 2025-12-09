@@ -17,8 +17,12 @@ on:
         required: false
 
 jobs:
-  call-upstream-workflow:
+  update-images:
+    strategy:
+      matrix:
+        workdir: [., web]
     uses: snw35/cicd/.github/workflows/github.yaml@multiple-dockerfiles
     with:
-      IMAGE_TAG: 'CONFD_VERSION'
+      WORKDIR: ${{ matrix.workdir }}
+      IMAGE_TAG: CONFD_VERSION
     secrets: inherit
