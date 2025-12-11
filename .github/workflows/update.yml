@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix:
         workdir: [., web]
-    uses: snw35/cicd/.github/workflows/github.yaml@multiple-dockerfiles
+    uses: snw35/cicd/.github/workflows/github.yaml@aggregate
     with:
       WORKDIR: ${{ matrix.workdir }}
       IMAGE_TAG: CONFD_VERSION
