@@ -31,6 +31,4 @@ jobs:
     needs: update-images
     if: needs.update-images.outputs.changed == 'true'
     uses: snw35/cicd/.github/workflows/create-release.yaml@aggregate
-    with:
-      targets_json: ${{ needs.update-images.outputs.targets }}
     secrets: inherit
