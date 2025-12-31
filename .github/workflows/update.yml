@@ -25,6 +25,8 @@ jobs:
     with:
       WORKDIR: ${{ matrix.workdir }}
       IMAGE_TAG: CONFD_VERSION
+      CICD_REPO: snw35/cicd
+      CICD_REF: optimise
     secrets: inherit
 
   create-release:
@@ -32,3 +34,6 @@ jobs:
     if: needs.update-images.outputs.changed == 'true'
     uses: snw35/cicd/.github/workflows/create-release.yaml@optimise
     secrets: inherit
+    with:
+      CICD_REPO: snw35/cicd
+      CICD_REF: optimise
