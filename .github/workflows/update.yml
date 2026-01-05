@@ -21,19 +21,14 @@ jobs:
     strategy:
       matrix:
         workdir: [., web]
-    uses: snw35/cicd/.github/workflows/github.yaml@optimise
+    uses: snw35/cicd/.github/workflows/github.yaml@remove-act
     with:
       WORKDIR: ${{ matrix.workdir }}
       IMAGE_TAG: CONFD_VERSION
-      CICD_REPO: snw35/cicd
-      CICD_REF: optimise
     secrets: inherit
 
   create-release:
     needs: update-images
     if: needs.update-images.outputs.changed == 'true'
-    uses: snw35/cicd/.github/workflows/create-release.yaml@optimise
+    uses: snw35/cicd/.github/workflows/create-release.yaml@remove-act
     secrets: inherit
-    with:
-      CICD_REPO: snw35/cicd
-      CICD_REF: optimise
