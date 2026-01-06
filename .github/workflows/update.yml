@@ -21,17 +21,17 @@ jobs:
     strategy:
       matrix:
         workdir: [., web]
-    uses: snw35/cicd/.github/workflows/github.yaml@remove-act
+    uses: snw35/cicd/.github/workflows/github.yaml@common-checkout
     with:
       WORKDIR: ${{ matrix.workdir }}
       IMAGE_TAG: CONFD_VERSION
-      CICD_REF: remove-act
+      CICD_REF: common-checkout
     secrets: inherit
 
   create-release:
     needs: update-images
     if: needs.update-images.outputs.changed == 'true'
-    uses: snw35/cicd/.github/workflows/create-release.yaml@remove-act
+    uses: snw35/cicd/.github/workflows/create-release.yaml@common-checkout
     with:
-      CICD_REF: remove-act
+      CICD_REF: common-checkout
     secrets: inherit
