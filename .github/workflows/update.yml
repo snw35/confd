@@ -25,6 +25,7 @@ jobs:
     with:
       WORKDIR: ${{ matrix.workdir }}
       IMAGE_TAG: CONFD_VERSION
+      CICD_REF: remove-act
     secrets: inherit
 
   create-release:
